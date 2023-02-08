@@ -69,22 +69,26 @@ const showEnding = (ending: Ending) => {
     print(`!!! ${sounds[ending]} !!!!`);
     print(`${soundStatments[ending]}`);
 
-    if (ending === 0) {
-        print("✅ CONGRATULATIONS! You successfully ate a WonderTart! 🥳");
-        print("***************************************");
-        return askQuestion("Press ENTER to re-enter Wonderland! ", haveAdventures);
-    } else if (ending === 1) {
-        print("You DEAD! You put yourself into HELL!");
-        print("***************************************");
-        return askQuestion("Press ENTER to re-enter Wonderland! ", haveAdventures);
-    } else if (ending === 2) {
-        print("You DEAD! You rise to heaven!");
-        print("***************************************");
-        return askQuestion("Press ENTER to re-enter Wonderland! ", haveAdventures);
-    } else {
-        print("You CANNOT eat tart with that combination. 😭");
-        print("***************************************");
-        return askQuestion("Press ENTER to choose again! ", eatTarts);
+    switch (ending) {
+        case 0:
+            print("✅ CONGRATULATIONS! You successfully ate a WonderTart! 🥳");
+            print("***************************************");
+            return askQuestion("Press ENTER to re-enter Wonderland! ", haveAdventures);
+        case 1:
+            print("You DEAD! You put yourself into HELL!");
+            print("***************************************");
+            return askQuestion("Press ENTER to re-enter Wonderland! ", haveAdventures);
+        case 2:
+            print("You DEAD! You rise to heaven!");
+            print("***************************************");
+            return askQuestion("Press ENTER to re-enter Wonderland! ", haveAdventures);
+        case 3:
+            print("You CANNOT eat tart with that combination. 😭");
+            print("***************************************");
+            return askQuestion("Press ENTER to choose again! ", eatTarts);
+        default:
+            console.error("unexpected ending number");
+            break;
     }
 };
 
