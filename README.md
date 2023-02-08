@@ -1,4 +1,4 @@
-# Alice's Adventures in TypeScriptLand // test
+# Alice's Adventures in TypeScriptLand
 
 ## Introduction
 
